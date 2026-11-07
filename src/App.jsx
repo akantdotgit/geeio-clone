@@ -6,6 +6,7 @@
 import { useState } from 'react';
 import { Button, SwitchToggle, Input, Dropdown, DropdownItem, MegaMenuPanel } from './components/ui';
 import { Navbar, Footer } from './components/layout';
+import { Faq } from './components/sections';
 
 /* ── Section wrapper helper ─────────────────────────────────────────── */
 function Section({ title, bg = 'bg-canvas', children }) {
@@ -233,6 +234,11 @@ export default function App() {
             />
           </div>
         </div>
+      </Section>
+
+      {/* ── 6. FAQ Section ────────────────────────────────────────── */}
+      <Section title="6 · FAQ Section (Data-Driven Accordion)">
+        <Faq />
       </Section>
 
       {/* ── Footer Layout ───────────────────────────────────────────── */}

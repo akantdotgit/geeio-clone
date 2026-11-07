@@ -24,6 +24,12 @@
   --color-accent-3:    #161B4C;   /* secondary button fill variant         */
   --color-focus:       #3B79C3;   /* keyboard focus outline — mandatory    */
 
+  /* ── Stitch compatibility aliases ──────────────────────────────────── */
+  --color-surface-container-lowest: #FFFFFF;
+  --color-surface-container-low:    #F6F7F6;
+  --color-surface-container:        #E4EFD3;
+  --font-headline-lg: 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+
   /* ── Shadows (single allowed shadow — cards/panels only) ────────────── */
   --shadow-card: rgba(18, 59, 23, 0.16) -32px 40px 60px 0px;
 
@@ -56,6 +62,13 @@
     background-color: var(--color-canvas);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  summary {
+    list-style: none;
+  }
+  summary::-webkit-details-marker {
+    display: none;
   }
 }
 
