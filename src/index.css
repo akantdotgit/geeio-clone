@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────────────────────────────────────
+   GEEIO DESIGN TOKENS — registered as Tailwind v4 @theme variables
+   Colors  → bg-*, text-*, border-*, outline-*, fill-*, etc.
+   Fonts   → font-heading (Jakarta Sans), font-ui (Inter)
+   Shadows → shadow-card
+   ───────────────────────────────────────────────────────────────────────── */
+@theme {
+  /* ── Color palette ──────────────────────────────────────────────────── */
+  --color-primary:     #0E160F;   /* CTAs, headings, dark surfaces        */
+  --color-ink:         #0E160F;   /* alias for primary                     */
+  --color-accent:      #317039;   /* botanical green hero bands            */
+  --color-canvas:      #FFFFFF;   /* page background / text on dark        */
+  --color-surface:     #F6F7F6;   /* default card / panel background       */
+  --color-surface-alt: #E4EFD3;   /* alternating section bands             */
+  --color-body:        #505851;   /* primary body text, outline-btn border */
+  --color-muted:       #999999;   /* secondary text, captions, placeholders*/
+  --color-neutral-1:   #222222;   /* deep neutral text                     */
+  --color-neutral-2:   #CCCCCC;   /* light borders / dividers              */
+  --color-neutral-3:   #333333;   /* mid-neutral text                      */
+  --color-accent-1:    #E1FCE4;   /* decorative only                       */
+  --color-accent-2:    #111EB2;   /* secondary button fill                 */
+  --color-accent-3:    #161B4C;   /* secondary button fill variant         */
+  --color-focus:       #3B79C3;   /* keyboard focus outline — mandatory    */
+
+  /* ── Shadows (single allowed shadow — cards/panels only) ────────────── */
+  --shadow-card: rgba(18, 59, 23, 0.16) -32px 40px 60px 0px;
+
+  /* ── Typography ─────────────────────────────────────────────────────── */
+  /* font-heading → Plus Jakarta Sans (editorial: headings, body, cards)  */
+  --font-heading: 'Plus Jakarta Sans', ui-sans-serif, system-ui,
+    -apple-system, BlinkMacSystemFont, sans-serif;
+  /* font-ui → Inter (interface chrome: buttons, nav, captions)           */
+  --font-ui: 'Inter', ui-sans-serif, system-ui,
+    -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   BASE — sane global defaults
+   ───────────────────────────────────────────────────────────────────────── */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-heading);
+    color: var(--color-body);
+    background-color: var(--color-canvas);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   UTILITIES — custom single-purpose helpers
+   ───────────────────────────────────────────────────────────────────────── */
+@layer utilities {
+  /*
+   * focus-ring
+   * Apply to every interactive element except text inputs.
+   * AGENTS.md: "outline: 2px solid #3B79C3 on :focus-visible — mandatory"
+   * Inputs use border-color swap instead (see Input.jsx).
+   */
+  .focus-ring {
+    outline: none;
+  }
+  .focus-ring:focus {
+    outline: none;
+  }
+  .focus-ring:focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 2px;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   KEYFRAMES — reusable entrance animations
+   ───────────────────────────────────────────────────────────────────────── */
+@keyframes fadeSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ticker {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-ltr {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+@layer utilities {
+  .animate-ticker {
+    display: flex;
+    width: max-content;
+    animation: ticker 28s linear infinite;
+  }
+  .animate-ticker:hover {
+    animation-play-state: paused;
+  }
+  .animate-marquee-ltr {
+    display: flex;
+    width: max-content;
+    animation: marquee-ltr 25s linear infinite;
+  }
+  .animate-marquee-ltr:hover {
+    animation-play-state: paused;
+  }
+}

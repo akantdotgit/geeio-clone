@@ -1,0 +1,242 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>404 - Page Not Found | Geeio</title>
+<!-- Google Fonts: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS v3 CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              dark: '#111814',
+              green: '#2d7a3a',
+              lightGreen: '#dbe8cb',
+            }
+          }
+        }
+      }
+    }
+  </script>
+<!-- BEGIN: Custom Styles -->
+<style data-purpose="base-styling">
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #ffffff;
+      color: #111814;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+  </style>
+<style data-purpose="dropdown-interaction">
+    /* Pages navigation dropdown */
+    .dropdown-parent:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  </style>
+<!-- END: Custom Styles -->
+<meta content="web_standard" name="shell-type"></head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-green-100 selection:text-green-900">
+<!-- BEGIN: MainHeader -->
+<header class="w-full pt-5 px-4 sm:px-6 relative z-50">
+<!-- Floating Pill Navigation Container -->
+<div class="max-w-[760px] mx-auto relative">
+  <nav aria-label="Main Navigation" class="bg-white/95 backdrop-blur-md rounded-full shadow-[0_4px_24px_rgba(0,0,0,0.06)] border border-neutral-100 px-5 py-2.5 flex items-center justify-between transition-all duration-300">
+    <!-- Brand Logo -->
+    <a aria-label="Geeio Home" class="flex items-center gap-1 shrink-0" href="/">
+      <img alt="Geeio Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAl_8DZUvO9-7RFQ_nfsL9NRvUyWUEhTM6Wnfg0NX3JK5tneN4bfaHviTboSNkH72qsqkoIzdGhPpVTUfic43snpLGhaiJKV8sRGg0_RLZWv63C_KhjbotWrLCj-mk2T1TgXAeFmwmdq6aduVd0185zXD6ZIUMjow48hGXsRpxLR4fsjZZLP97hL9I-TGVdg4UbiBPyAiHcjPxUI2BBOeKMgKxkPi5cCWwb-Py55GXXSP457YWyx-nacQ">
+    </a>
+    <!-- Desktop Navigation Links (hidden on mobile/tablet < lg) -->
+    <ul class="hidden lg:flex items-center gap-6 text-sm font-medium text-neutral-700">
+      <li class=""><a class="hover:text-black transition-colors" href="#">Home</a></li>
+      <li class=""><a class="hover:text-black transition-colors" href="#">Features</a></li>
+      <li class=""><a class="hover:text-black transition-colors" href="#">Pricing</a></li>
+      <li class=""><a class="hover:text-black transition-colors" href="#">Contact</a></li>
+      <li class="relative group">
+        <button aria-haspopup="true" class="flex items-center gap-1 hover:text-black transition-colors py-1 focus:outline-none" type="button">
+          <span class="">Pages</span>
+          <svg class="w-3.5 h-3.5 text-neutral-500 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+          </svg>
+        </button>
+        <div class="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[620px] bg-white rounded-3xl shadow-2xl border border-neutral-100 p-6 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200 z-50">
+          <div class="grid grid-cols-3 gap-6 text-left">
+            <!-- Main pages Column -->
+            <div class="flex flex-col space-y-2">
+              <span class="text-[11px] font-bold text-neutral-400 uppercase tracking-wider mb-1">Main pages</span>
+              <a class="text-xs font-medium text-neutral-600 hover:text-black hover:translate-x-0.5 transition-all" href="#">Home</a>
+              <a class="text-xs font-medium text-neutral-600 hover:text-black hover:translate-x-0.5 transition-all" href="#">About Us</a>
+              <a class="text-xs font-medium text-neutral-600 hover:text-black hover:translate-x-0.5 transition-all" href="#">Features</a>
+              <a class="text-xs font-medium text-neutral-600 hover:text-black hover:translate-x-0.5 transition-all" href="#">Blog</a>
+              <a class="text-xs font-medium text-neutral-600 hover:text-black hover:translate-x-0.5 transition-all" href="#">Downloads</a>
+              <a class="text-xs font-medium text-neutral-600 hover:text-black hover:translate-x-0.5 transition-all" href="#">Support</a>
+              <a class="text-xs font-medium text-neutral-600 hover:text-black hover:translate-x-0.5 transition-all" href="#">Pricing</a>
+            </div>
+            <!-- More pages Column -->
+            <div class="flex flex-col space-y-2">
+              <span class="text-[11px] font-bold text-neutral-400 uppercase tracking-wider mb-1">More pages</span>
+              <a class="text-xs font-medium text-neutral-600 hover:text-black hover:translate-x-0.5 transition-all" href="#">Pricing</a>
+              <a class="text-xs font-medium text-neutral-600 hover:text-black hover:translate-x-0.5 transition-all" href="#">Privacy Policy</a>
+              <a class="text-xs font-medium text-neutral-600 hover:text-black hover:translate-x-0.5 transition-all" href="#">Terms &amp; Condition</a>
+              <a class="text-xs font-medium text-neutral-600 hover:text-black hover:translate-x-0.5 transition-all" href="#">Changelog</a>
+              <a class="text-xs font-medium text-neutral-600 hover:text-black hover:translate-x-0.5 transition-all" href="#">License</a>
+              <a class="text-xs font-medium text-neutral-600 hover:text-black hover:translate-x-0.5 transition-all" href="#">Styleguide</a>
+              <a class="text-xs font-semibold text-emerald-700 bg-neutral-50 px-2 py-1 rounded-md -ml-2 inline-block" href="#">404 Error</a>
+            </div>
+            <!-- Promo Card Column -->
+            <div class="bg-neutral-50 rounded-2xl p-4 flex flex-col justify-between border border-neutral-100">
+              <div>
+                <div class="w-8 h-8 rounded-lg bg-emerald-700/10 flex items-center justify-center text-emerald-700 mb-2">
+                  <span class="material-symbols-outlined text-lg">nest_eco_leaf</span>
+                </div>
+                <h4 class="text-xs font-bold text-neutral-900 leading-snug">Download Geeio for free</h4>
+                <p class="text-[11px] text-neutral-500 mt-1 leading-relaxed">Get instant plant diagnosis and intelligent care tracking on your phone.</p>
+              </div>
+              <div class="mt-3 pt-3 border-t border-neutral-200/60 flex flex-col gap-2">
+                <div class="flex items-center gap-1.5 text-[10px] text-neutral-600 font-medium">
+                  <span class="bg-white px-2 py-1 rounded border border-neutral-200 shadow-sm">App Store</span>
+                  <span class="bg-white px-2 py-1 rounded border border-neutral-200 shadow-sm">Google Play</span>
+                </div>
+                <a class="inline-flex items-center justify-center w-full bg-[#111814] text-white text-xs font-semibold py-2 rounded-full hover:bg-neutral-800 transition-colors" href="#download">
+                  Download
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <!-- Desktop CTA Button (hidden on mobile/tablet < lg) -->
+    <div class="hidden lg:block">
+      <a class="inline-flex items-center justify-center bg-[#111814] text-white text-xs sm:text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-neutral-800 transition-colors shadow-sm" href="#download">
+        Download
+      </a>
+    </div>
+    <!-- Mobile Hamburger Toggle Button (lg:hidden) -->
+    <button id="mobile-menu-toggle" aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle Navigation Menu" class="lg:hidden relative flex flex-col justify-center items-center w-9 h-9 rounded-full hover:bg-neutral-100 transition-colors focus:outline-none p-2" type="button"><span id="hamburger-bar-1" class="w-5 h-[2px] bg-neutral-900 rounded-full block transition-transform duration-300 ease-in-out -translate-y-1"></span><span id="hamburger-bar-2" class="w-5 h-[2px] bg-neutral-900 rounded-full block transition-transform duration-300 ease-in-out translate-y-1"></span></button>
+  </nav>
+  <!-- Mobile Dropdown Menu Panel (hidden by default) -->
+  <div class="hidden lg:hidden absolute top-full left-0 right-0 mt-2 bg-white rounded-3xl shadow-2xl border border-neutral-100 p-5 z-50 transition-all duration-300 max-h-[85vh] overflow-y-auto" id="mobile-menu"><div class="flex flex-col space-y-2 font-medium text-neutral-700 text-sm"><a class="px-3 py-2 rounded-xl hover:bg-neutral-50 hover:text-black transition-colors" href="/">Home</a><a class="px-3 py-2 rounded-xl hover:bg-neutral-50 hover:text-black transition-colors" href="#">Features</a><a class="px-3 py-2 rounded-xl hover:bg-neutral-50 hover:text-black transition-colors" href="#">Pricing</a><a class="px-3 py-2 rounded-xl hover:bg-neutral-50 hover:text-black transition-colors" href="#">Contact</a><div class="border-t border-neutral-100 pt-2 flex flex-col"><button id="tablet-pages-btn" type="button" aria-expanded="false" class="w-full flex items-center justify-between px-3 py-2 rounded-xl hover:bg-neutral-50 text-neutral-800 font-medium transition-colors"><span class="text-sm font-semibold">Pages</span><svg id="tablet-pages-chevron" class="w-4 h-4 text-neutral-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button><div id="tablet-pages-drawer" class="hidden flex-col gap-4 mt-2 px-1 pt-1 pb-3"><div class="grid grid-cols-2 gap-4 bg-neutral-50 p-4 rounded-2xl border border-neutral-100"><div class="flex flex-col space-y-2"><span class="text-[11px] font-bold text-neutral-400 uppercase tracking-wider mb-1">Main pages</span><a class="text-xs font-medium text-neutral-600 hover:text-black transition-colors" href="/">Home</a><a class="text-xs font-medium text-neutral-600 hover:text-black transition-colors" href="#">About Us</a><a class="text-xs font-medium text-neutral-600 hover:text-black transition-colors" href="#">Features</a><a class="text-xs font-medium text-neutral-600 hover:text-black transition-colors" href="#">Blog</a><a class="text-xs font-medium text-neutral-600 hover:text-black transition-colors" href="#">Downloads</a><a class="text-xs font-medium text-neutral-600 hover:text-black transition-colors" href="#">Support</a><a class="text-xs font-medium text-neutral-600 hover:text-black transition-colors" href="#">Pricing</a></div><div class="flex flex-col space-y-2"><span class="text-[11px] font-bold text-neutral-400 uppercase tracking-wider mb-1">More pages</span><a class="text-xs font-medium text-neutral-600 hover:text-black transition-colors" href="#">Privacy Policy</a><a class="text-xs font-medium text-neutral-600 hover:text-black transition-colors" href="#">Terms &amp; Condition</a><a class="text-xs font-medium text-neutral-600 hover:text-black transition-colors" href="#">Changelog</a><a class="text-xs font-medium text-neutral-600 hover:text-black transition-colors" href="#">License</a><a class="text-xs font-medium text-neutral-600 hover:text-black transition-colors" href="#">Styleguide</a><a class="text-xs font-semibold text-emerald-700 bg-white px-2 py-1 rounded-md shadow-sm inline-block" href="#">404 Error</a></div></div><div class="bg-neutral-50 rounded-2xl p-4 flex flex-col justify-between border border-neutral-100"><div><div class="w-8 h-8 rounded-lg bg-emerald-700/10 flex items-center justify-center text-emerald-700 mb-2"><span class="material-symbols-outlined text-lg">nest_eco_leaf</span></div><h4 class="text-xs font-bold text-neutral-900 leading-snug">Download Geeio for free</h4><p class="text-[11px] text-neutral-500 mt-1 leading-relaxed">Get instant plant diagnosis and intelligent care tracking on your phone.</p></div><div class="mt-3 pt-3 border-t border-neutral-200/60 flex flex-col gap-2"><div class="flex items-center gap-1.5 text-[10px] text-neutral-600 font-medium"><span class="bg-white px-2 py-1 rounded border border-neutral-200 shadow-sm">App Store</span><span class="bg-white px-2 py-1 rounded border border-neutral-200 shadow-sm">Google Play</span></div><a class="inline-flex items-center justify-center w-full bg-[#111814] text-white text-xs font-semibold py-2 rounded-full hover:bg-neutral-800 transition-colors" href="#download">Download</a></div></div></div></div><div class="pt-2"><a class="flex items-center justify-center w-full bg-[#111814] text-white text-sm font-semibold py-3 rounded-full hover:bg-neutral-800 transition-colors shadow-sm" href="#download">Download</a></div></div></div><div id="navbar-script-container"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="hidden" alt="" onload="(function(){const toggle=document.getElementById('mobile-menu-toggle');const menu=document.getElementById('mobile-menu');const bar1=document.getElementById('hamburger-bar-1');const bar2=document.getElementById('hamburger-bar-2');const pagesBtn=document.getElementById('tablet-pages-btn');const pagesDrawer=document.getElementById('tablet-pages-drawer');const pagesChevron=document.getElementById('tablet-pages-chevron');if(toggle&amp;&amp;menu&amp;&amp;!toggle.dataset.bound){toggle.dataset.bound='true';toggle.addEventListener('click',function(e){e.stopPropagation();const isHidden=menu.classList.contains('hidden');if(isHidden){menu.classList.remove('hidden');toggle.setAttribute('aria-expanded','true');if(bar1&amp;&amp;bar2){bar1.classList.remove('-translate-y-1');bar1.classList.add('rotate-45','translate-y-0');bar2.classList.remove('translate-y-1');bar2.classList.add('-rotate-45','translate-y-0');}}else{menu.classList.add('hidden');toggle.setAttribute('aria-expanded','false');if(bar1&amp;&amp;bar2){bar1.classList.add('-translate-y-1');bar1.classList.remove('rotate-45','translate-y-0');bar2.classList.add('translate-y-1');bar2.classList.remove('-rotate-45','translate-y-0');}}});}if(pagesBtn&amp;&amp;pagesDrawer&amp;&amp;!pagesBtn.dataset.bound){pagesBtn.dataset.bound='true';pagesBtn.addEventListener('click',function(e){e.stopPropagation();const isClosed=pagesDrawer.classList.contains('hidden');if(isClosed){pagesDrawer.classList.remove('hidden');pagesDrawer.classList.add('flex');pagesBtn.setAttribute('aria-expanded','true');if(pagesChevron)pagesChevron.classList.add('rotate-180');}else{pagesDrawer.classList.add('hidden');pagesDrawer.classList.remove('flex');pagesBtn.setAttribute('aria-expanded','false');if(pagesChevron)pagesChevron.classList.remove('rotate-180');}});}})();"></div>
+</div>
+</header>
+<!-- END: MainHeader -->
+<!-- BEGIN: ErrorHeroSection -->
+<main class="w-full flex-1 flex flex-col items-center justify-center px-4 py-12 text-center"><div class="flex flex-col w-full">
+<!-- 404 Hero Visual Section -->
+<section class="w-full max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 flex flex-col items-center justify-center text-center">
+<div class="w-full max-w-[540px] mx-auto flex items-center justify-center transition-transform duration-500 hover:scale-[1.02]">
+<img alt="404 Cactus Illustration" class="w-full h-auto object-contain max-h-[320px] sm:max-h-[380px]" loading="eager" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkHOagJrBwwNaIZTROUw_nubDPYn3b0VgJjyvgNDvGTyOl6VmzpllDrNN_ezokvtVZCA_2bHl0CmDW-c2lcWFYB-Ktg9QYE4npj8a5Smvqj-uxfmCUI3KPpyLVTPGXvx_Q8ZI2P8kdRHD5nOMfjAtFXQqKBQTM7r8yJdLr2gMweY8J9UxCYmh5wkq1h92dfIRY1FGmZSy3mCISZqSt8CDYqj-02go5T-XoXS4mJx_oixMYHOCKInHh0g">
+</div>
+<div class="max-w-xl mx-auto flex flex-col items-center mt-6 sm:mt-8">
+<h1 class="font-display-hero-mobile md:font-display-hero text-headline-lg-mobile md:text-headline-lg text-on-surface tracking-tight leading-tight">
+        Uh-oh! something went wrong
+      </h1>
+<p class="font-body-base text-body-base text-on-surface-variant/80 mt-3 mb-8 max-w-md">
+        We can’t find the page you’re looking for
+      </p>
+<a class="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-on-surface text-surface-container-lowest font-label-md text-label-md shadow-sm transition-all duration-200 hover:bg-primary hover:shadow-md active:scale-95" href="/">
+        Back To Home Page
+      </a>
+</div>
+</section>
+<!-- Unified Dark Forest CTA and Directory Footer -->
+<section class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 sm:mt-20 mb-8 sm:mb-12">
+<div class="bg-[#111814] text-white rounded-[32px] sm:rounded-[40px] p-8 sm:p-12 lg:p-16 relative overflow-hidden shadow-2xl">
+<!-- Ambient Glow Behind CTA -->
+<div class="absolute -top-32 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary/20 rounded-full blur-[96px] pointer-events-none"></div>
+<!-- Top CTA Section -->
+<div class="relative z-10 flex flex-col items-center text-center max-w-2xl mx-auto pt-2 sm:pt-4">
+<div class="w-12 h-12 flex items-center justify-center mb-4 transition-transform duration-300 hover:scale-110">
+<img alt="Geeio Botanical Icon" class="w-10 h-10 object-contain rounded-xl" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPcQMQ7eVA14SDsf2K34LSMx__FGG_po_BmvUabOdoDJfZL9ENcjf_n2fNziT5gsEHeTaYJSzmLJ5tRAinTT_2ZkbFFu3zBqvgXD7tuB5GFcst19jsMefikbNhPFFR7NoYUMB-8niGbMOKor30gxDp8J-JURHG6EZg9YD1bSj8V-kAKgT06YNY91Hoj4bqch_4LT7KmgkYPe651dEeoacwDe81kNT9DA97RhrxWJ3cJZh32KhgLAkVyQ">
+</div>
+<h2 class="font-headline-lg-mobile sm:font-headline-md text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-white mb-3">
+          Start taking care of your plant
+        </h2>
+<p class="text-neutral-400 font-body-sm text-sm sm:text-base max-w-md mx-auto mb-8">
+          Upload a photo for AI to identify your plant and suggest care.
+        </p>
+<a class="inline-flex items-center justify-center bg-white text-[#111814] font-label-md text-sm sm:text-base px-8 py-3.5 rounded-full font-medium hover:bg-neutral-100 transition-all duration-200 hover:shadow-lg active:scale-98" href="#">
+          Book Your Appointment
+        </a>
+</div>
+<!-- Divider Ribbon -->
+<div class="w-full h-px bg-neutral-800/80 my-10 sm:my-14"></div>
+<!-- 4-Column Directory -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12 relative z-10 text-left">
+<!-- Col 1: Product -->
+<div class="flex flex-col space-y-3">
+<span class="text-xs uppercase tracking-wider text-neutral-400 font-semibold font-label-tag mb-1">
+            Product
+          </span>
+<a class="text-sm text-neutral-300 hover:text-white transition-colors duration-150" href="#">Features</a>
+<a class="text-sm text-neutral-300 hover:text-white transition-colors duration-150" href="#">Pricing</a>
+<a class="text-sm text-neutral-300 hover:text-white transition-colors duration-150" href="#">Support</a>
+</div>
+<!-- Col 2: Our Services -->
+<div class="flex flex-col space-y-3">
+<span class="text-xs uppercase tracking-wider text-neutral-400 font-semibold font-label-tag mb-1">
+            Our services
+          </span>
+<a class="text-sm text-neutral-300 hover:text-white transition-colors duration-150" href="#">About</a>
+<a class="text-sm text-neutral-300 hover:text-white transition-colors duration-150" href="#">Contact</a>
+<a class="text-sm text-neutral-300 hover:text-white transition-colors duration-150" href="#">Terms</a>
+</div>
+<!-- Col 3: Resources -->
+<div class="flex flex-col space-y-3">
+<span class="text-xs uppercase tracking-wider text-neutral-400 font-semibold font-label-tag mb-1">
+            Resources
+          </span>
+<a class="text-sm text-neutral-300 hover:text-white transition-colors duration-150" href="#">Plant Care Guide</a>
+<a class="text-sm text-neutral-300 hover:text-white transition-colors duration-150" href="#">Blog</a>
+<a class="text-sm text-neutral-300 hover:text-white transition-colors duration-150" href="#">License</a>
+</div>
+<!-- Col 4: QR Download Badge -->
+<div class="col-span-2 sm:col-span-2 md:col-span-1 flex flex-col justify-start">
+<div class="bg-neutral-900/90 p-4 rounded-2xl flex items-center gap-4 w-full sm:w-auto md:w-full">
+<div class="w-16 h-16 bg-white p-1 rounded-xl shrink-0 flex items-center justify-center">
+<img alt="Geeio App QR Code" class="w-full h-full object-contain" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_3c6HF_PTviPSEpLIGZ47MpXE2o-pdxHem5yn3F9RMlit_AbsstolVv-PXeDbZDze6vyXSNDisZpuJmXVQvEaEdLmvFNAAj9ROZFVhGCgoPilQToNupYennFpemHJE_-TL6eRNHl-CTmXZgY13rwIQ4w-F_RtQO_k-KGY0SjghR5i96HDs4KibLRMC9g44_vtdaXDsk1c_7yFJFHZgZrrnAbfipvUFWtHsi5AZkq_nN58MXr6CrK9TA">
+</div>
+<div class="flex flex-col">
+<span class="text-xs uppercase tracking-wider text-neutral-400 font-medium">Download</span>
+<span class="text-sm font-semibold text-white">Geeio app</span>
+<span class="text-[11px] text-neutral-400">iOS &amp; Android</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Legal Row -->
+<div class="w-full h-px bg-neutral-800/80 my-8 sm:my-10"></div>
+<div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-400 font-body-sm relative z-10 text-center sm:text-left">
+<div class="">
+          © Geeio - 2026, Designed By Templateflow Powered By Webflow
+        </div>
+<div class="flex items-center gap-2">
+<a class="hover:text-white transition-colors duration-150" href="#">Privacy policy</a>
+<span class="text-neutral-600">•</span>
+<a class="hover:text-white transition-colors duration-150" href="#">Terms of service</a>
+</div>
+</div>
+</div>
+</section>
+</div></main>
+<!-- END: ErrorHeroSection -->
+<!-- BEGIN: SignatureDarkFooter -->
+<!-- END: SignatureDarkFooter -->
+
+
+
+
+
+
+</body></html>
