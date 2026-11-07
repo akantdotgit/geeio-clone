@@ -51,7 +51,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen font-heading">
-      {/* ── Floating Navbar (Step 2 Layout) ─────────────────────────── */}
+      {/* ── Non-floating Navbar (Step 2 Layout) ────────────────────── */}
       <Navbar activePage="Home" />
 
       {/* ── Page header ─────────────────────────────────────────────── */}

@@ -3,10 +3,10 @@ import logoSvg from '../../assets/icons/6a61a211f53956969ade8967_c99c33b003e1b4f
 import { Button, Dropdown, MegaMenuPanel } from '../ui';
 
 /**
- * Navbar — Geeio floating pill navigation header
+ * Navbar — Geeio non-floating in-flow pill navigation header
  *
  * Implements:
- *   - Sticky/floating pill header with backdrop blur and subtle border
+ *   - Static/in-flow pill header (non-floating) with subtle border
  *   - Official Geeio SVG logo
  *   - Desktop navigation (>= 1024px / lg):
  *       • 4 inline links: Home, Features, Pricing, Contact (Inter 14px/500)
@@ -68,7 +68,7 @@ export default function Navbar({
         .filter(Boolean)
         .join(' ')}
     >
-      {/* ── Main floating pill container ────────────────────────────── */}
+      {/* ── Main pill container ────────────────────────────────────── */}
       <div className="pointer-events-auto bg-canvas rounded-full px-5 sm:pl-4 sm:pr-2.75 py-2.5 flex items-center justify-between gap-4 md:gap-8 lg:gap-10 border border-neutral-2/40 w-full max-w-[680px]">
         {/* Brand Logo */}
         <div className="flex items-center">
