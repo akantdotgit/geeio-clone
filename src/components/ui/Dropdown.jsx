@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect, useId } from 'react';
+import { Link } from 'react-router-dom';
 import phoneImage from '../../assets/images/mega-menu-phone.webp';
 import appStoreBadge from '../../assets/icons/6a68d04ba22c118a34b3ec7f_app-store-button.svg';
 import googlePlayBadge from '../../assets/icons/6a68d04197b3a915c804b38e_google-play-button.svg';
@@ -50,23 +51,22 @@ export function MegaMenuPanel({
   onSelect,
 }) {
   const mainPages = [
-    'Home',
-    'About Us',
-    'Features',
-    'Blog',
-    'Downloads',
-    'Support',
-    'Pricing',
+    { label: 'Home', to: '/' },
+    { label: 'About Us', to: '/about' },
+    { label: 'Features', to: '/features' },
+    { label: 'Blog', to: '/blog' },
+    { label: 'Downloads', to: '/downloads' },
+    { label: 'Support', to: '/contact' },
+    { label: 'Pricing', to: '/pricing' },
   ];
 
   const morePages = [
-    'Pricing',
-    'Privacy Policy',
-    'Terms & Condition',
-    'Changelog',
-    'License',
-    'Styleguide',
-    '404 Eorror',
+    { label: 'Pricing', to: '/pricing' },
+    { label: 'Privacy Policy', to: '/privacy' },
+    { label: 'Terms & Condition', to: '/terms' },
+    { label: 'Changelog', to: '/changelog' },
+    { label: 'License', to: '/license' },
+    { label: '404 Error', to: '/404' },
   ];
 
   return (
@@ -78,13 +78,13 @@ export function MegaMenuPanel({
         </h3>
         <ul className="flex flex-col gap-3.5">
           {mainPages.map((page) => {
-            const isActive = activePage === page;
+            const isActive = activePage === page.label;
             return (
-              <li key={page}>
-                <a
-                  href={`#${page.toLowerCase().replace(/\s+/g, '-')}`}
+              <li key={page.label}>
+                <Link
+                  to={page.to}
                   role="menuitem"
-                  onClick={() => onSelect?.(page)}
+                  onClick={() => onSelect?.(page.label)}
                   className={[
                     'font-heading text-[15px] block transition-colors duration-150',
                     'focus-ring rounded-md',
@@ -93,8 +93,8 @@ export function MegaMenuPanel({
                       : 'text-body font-medium hover:text-accent',
                   ].join(' ')}
                 >
-                  {page}
-                </a>
+                  {page.label}
+                </Link>
               </li>
             );
           })}
@@ -108,13 +108,13 @@ export function MegaMenuPanel({
         </h3>
         <ul className="flex flex-col gap-3.5">
           {morePages.map((page, idx) => {
-            const isActive = activePage === page && activePage !== 'Pricing';
+            const isActive = activePage === page.label && activePage !== 'Pricing';
             return (
-              <li key={`${page}-${idx}`}>
-                <a
-                  href={`#${page.toLowerCase().replace(/\s+/g, '-')}`}
+              <li key={`${page.label}-${idx}`}>
+                <Link
+                  to={page.to}
                   role="menuitem"
-                  onClick={() => onSelect?.(page)}
+                  onClick={() => onSelect?.(page.label)}
                   className={[
                     'font-heading text-[15px] block transition-colors duration-150',
                     'focus-ring rounded-md',
@@ -123,8 +123,8 @@ export function MegaMenuPanel({
                       : 'text-body font-medium hover:text-accent',
                   ].join(' ')}
                 >
-                  {page}
-                </a>
+                  {page.label}
+                </Link>
               </li>
             );
           })}
@@ -132,7 +132,7 @@ export function MegaMenuPanel({
       </div>
 
       {/* Column 3: Promo Card with Phone and Store Badges */}
-      <div className="bg-[#F6F7F6] rounded-3xl p-6 flex flex-col items-center justify-between">
+      <div className="bg-surface rounded-3xl p-6 flex flex-col items-center justify-between">
         {/* Phone Mockup Screen */}
         <div className="w-[240px] flex justify-center">
           <img

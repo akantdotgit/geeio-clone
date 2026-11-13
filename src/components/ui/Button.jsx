@@ -26,7 +26,7 @@ import { useState, useRef } from 'react';
  */
 
 const BASE_STYLES = [
-  'group relative inline-flex items-center justify-center gap-2.5',
+  'group/btn relative inline-flex items-center justify-center gap-2.5',
   'cursor-pointer select-none',
   'transition-colors duration-200 ease-out',
   'disabled:opacity-60 disabled:pointer-events-none',
@@ -62,7 +62,7 @@ const VARIANTS = {
   white: [
     'bg-canvas text-primary',
     'font-heading text-base font-bold leading-tight',
-    'px-7 py-4 rounded-full',
+    'px-6 py-4 rounded-full',
     'hover:bg-surface active:scale-[0.98]',
   ].join(' '),
 
@@ -80,6 +80,7 @@ export default function Button({
   as: Tag = 'button',
   icon,
   className = '',
+  flip = true,
   children,
   ...props
 }) {
@@ -128,18 +129,20 @@ export default function Button({
 
       {/* Watch demo: direct text turning accent on hover, no flip */}
       {isDemo ? (
-        <span className="text-body transition-colors duration-200 group-hover:text-accent font-inherit">
+        <span className="text-body transition-colors duration-200 group-hover/btn:text-accent font-inherit">
           {children}
         </span>
+      ) : !flip ? (
+        <span className="font-inherit">{children}</span>
       ) : (
         /* All other buttons: signature vertical text flip animation */
         <span className="relative inline-flex flex-col h-[1.25em] overflow-hidden leading-tight font-inherit">
-          <span className="inline-block transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-full font-inherit">
+          <span className="inline-block transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/btn:-translate-y-full font-inherit">
             {children}
           </span>
           <span
             aria-hidden="true"
-            className="absolute top-full left-0 inline-block transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-full font-inherit"
+            className="absolute top-full left-0 inline-block transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/btn:-translate-y-full font-inherit"
           >
             {children}
           </span>
@@ -190,11 +193,11 @@ export function SwitchToggle({
             }}
             onClick={() => onChange?.(opt)}
             className={[
-              'px-7 py-3 rounded-xl font-heading text-base font-medium transition-colors duration-200 cursor-pointer',
+              'px-7.5 py-2.25 rounded-lg font-ui text-base font-medium transition-colors duration-200 cursor-pointer',
               'focus-ring',
               isActive
-                ? 'bg-[#276332] text-canvas shadow-xs'
-                : 'bg-[#F4F6F4] text-neutral-1 hover:text-accent',
+                ? 'bg-accent text-canvas'
+                : 'bg-surface text-neutral-1 hover:text-accent',
             ].join(' ')}
           >
             {opt}
