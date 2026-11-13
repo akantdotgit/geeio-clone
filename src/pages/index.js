@@ -1,0 +1,13 @@
+export { default as Home } from './Home';
+export { default as Features } from './Features';
+export { default as Pricing } from './Pricing';
+export { default as Contact } from './Contact';
+export { default as AboutUs } from './AboutUs';
+export { default as BlogPage } from './BlogPage';
+export { default as Article } from './Article';
+export { default as Downloads } from './Downloads';
+export { default as PrivacyPolicy } from './PrivacyPolicy';
+export { default as TermsAndConditions } from './TermsAndConditions';
+export { default as Changelog } from './Changelog';
+export { default as License } from './License';
+export { default as NotFound } from './NotFound';
