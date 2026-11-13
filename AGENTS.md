@@ -41,7 +41,7 @@ Geeio is a plant-care platform with a modern, botanical-inspired aesthetic: calm
 
 ### Typography
 
-Two fonts only: **Plus Jakarta Sans** (editorial: headings, body, cards, badges, weight 500–700) and **Inter** (interface chrome: buttons, nav, captions, weight 300–500). Fallback: `ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif`.
+Two fonts only: **Plus Jakarta Sans** (editorial: headings, body, cards, weight 500–700) and **Inter** (interface chrome: buttons, nav, captions, weight 300–500). Fallback: `ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif`.
 
 | Role | Font | Size | Weight | Line height | Tracking |
 |---|---|---|---|---|---|
@@ -67,7 +67,7 @@ Display headings must use negative tracking — never 0px — as defined in the 
 
 ### Border Radius
 
-`0` (images/dividers), `8`, `12` (inputs, secondary buttons), `16` (rarely used), `24` (cards/containers — the standard), `32` (large panels), `9999px` (pills: primary buttons, badges, avatars). Interactive elements are never less than 12px.
+`0` (images/dividers), `8`, `12` (inputs, secondary buttons), `16` (rarely used), `24` (cards/containers — the standard), `32` (large panels), `9999px` (pills: primary buttons, avatars). Interactive elements are never less than 12px.
 
 ### Shadows & Elevation
 
@@ -108,10 +108,6 @@ Themes: light (measured palette above) and a derived dark theme (`bg #0F1010`, `
 - Always `border-radius: 24px`, padding 16–24px, text `#505851`, Jakarta Sans 14px/400.
 - Default: bg `#F6F7F6` + the single shadow. Alt: bg `#E4EFD3`. Featured/dark: bg `#0E160F`, text `#FFFFFF`.
 - No gradient fills, no multiple shadows.
-
-### Badges
-
-Bg `rgba(255,255,255,0.4)`, text `#0E160F`, Jakarta Sans 20px/500, padding 8px 12px, radius 40px, height 44px.
 
 ### Inputs
 
