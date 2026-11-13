@@ -28,7 +28,12 @@
   --color-surface-container-lowest: #FFFFFF;
   --color-surface-container-low:    #F6F7F6;
   --color-surface-container:        #E4EFD3;
+  --color-on-surface:               #151E16;
+  --color-on-surface-variant:       #41493F;
+  --color-inverse-surface:          #121B13;
+  --color-on-primary:               #FFFFFF;
   --font-headline-lg: 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-headline-sm: 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 
   /* ── Shadows (single allowed shadow — cards/panels only) ────────────── */
   --shadow-card: rgba(18, 59, 23, 0.16) -32px 40px 60px 0px;
@@ -109,13 +114,22 @@
 }
 
 @keyframes ticker {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes marquee-ltr {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
 
-@keyframes marquee-ltr {
-  0%   { transform: translateX(-50%); }
-  100% { transform: translateX(0); }
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 @layer utilities {
@@ -124,15 +138,14 @@
     width: max-content;
     animation: ticker 28s linear infinite;
   }
-  .animate-ticker:hover {
-    animation-play-state: paused;
-  }
   .animate-marquee-ltr {
     display: flex;
     width: max-content;
     animation: marquee-ltr 25s linear infinite;
   }
-  .animate-marquee-ltr:hover {
-    animation-play-state: paused;
+  .animate-marquee {
+    display: flex;
+    width: max-content;
+    animation: marquee 25s linear infinite;
   }
 }
