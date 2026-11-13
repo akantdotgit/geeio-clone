@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import logoSvg from '../../assets/icons/6a61a211f53956969ade8967_c99c33b003e1b4f5fc1184dd44d3ddd3_logo.svg';
 import { Button, Dropdown, MegaMenuPanel } from '../ui';
 
@@ -20,10 +21,25 @@ import { Button, Dropdown, MegaMenuPanel } from '../ui';
  */
 
 const NAV_LINKS = [
-  { label: 'Home', href: '#' },
-  { label: 'Features', href: '#features' },
-  { label: 'Pricing', href: '#pricing' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Home', to: '/' },
+  { label: 'Features', to: '/features' },
+  { label: 'Pricing', to: '/pricing' },
+  { label: 'Contact', to: '/contact' },
+];
+
+const MOBILE_PAGES = [
+  { label: 'Home', to: '/' },
+  { label: 'About Us', to: '/about' },
+  { label: 'Features', to: '/features' },
+  { label: 'Blog', to: '/blog' },
+  { label: 'Downloads', to: '/downloads' },
+  { label: 'Support', to: '/contact' },
+  { label: 'Pricing', to: '/pricing' },
+  { label: 'Privacy Policy', to: '/privacy' },
+  { label: 'Terms & Condition', to: '/terms' },
+  { label: 'Changelog', to: '/changelog' },
+  { label: 'License', to: '/license' },
+  { label: '404 Error', to: '/404' },
 ];
 
 export default function Navbar({
@@ -72,8 +88,8 @@ export default function Navbar({
       <div className="pointer-events-auto bg-canvas rounded-full px-5 sm:pl-4 sm:pr-2.75 py-2.5 flex items-center justify-between gap-4 md:gap-8 lg:gap-10 border border-neutral-2/40 w-full max-w-[680px]">
         {/* Brand Logo */}
         <div className="flex items-center">
-          <a
-            href="#"
+          <Link
+            to="/"
             aria-label="Geeio Home"
             className="flex items-center focus-ring rounded-md select-none"
           >
@@ -82,7 +98,7 @@ export default function Navbar({
               alt="Geeio Logo"
               className="h-5.25 sm:h-5 w-auto object-fill"
             />
-          </a>
+          </Link>
         </div>
 
         {/* Desktop Navigation Links (>=1024px / lg) */}
@@ -90,23 +106,21 @@ export default function Navbar({
           aria-label="Primary Navigation"
           className="hidden lg:flex items-center gap-4.5"
         >
-          {NAV_LINKS.map(({ label, href }) => {
-            const isActive = activePage === label;
-            return (
-              <a
-                key={label}
-                href={href}
-                className={[
-                  'inline-flex items-center font-ui text-sm font-medium capitalize leading-5 transition-colors duration-200 focus-ring rounded-md px-1.5 py-1 select-none',
-                  isActive
-                    ? 'text-accent'
-                    : 'text-neutral-1 hover:text-accent',
-                ].join(' ')}
-              >
-                {label}
-              </a>
-            );
-          })}
+          {NAV_LINKS.map(({ label, to }) => (
+            <NavLink
+              key={label}
+              to={to}
+              end={to === '/'}
+              className={({ isActive }) => [
+                'inline-flex items-center font-ui text-sm font-medium capitalize leading-5 transition-colors duration-200 focus-ring rounded-md px-1.5 py-1 select-none',
+                isActive
+                  ? 'text-accent'
+                  : 'text-neutral-1 hover:text-accent',
+              ].join(' ')}
+            >
+              {label}
+            </NavLink>
+          ))}
 
           {/* Pages Mega Menu Dropdown */}
           <Dropdown
@@ -125,7 +139,7 @@ export default function Navbar({
 
         {/* Desktop Download CTA Button (>=1024px / lg) */}
         <div className="hidden lg:flex items-center gap-2">
-          <Button variant="primary-sm" as="a" href="#download">
+          <Button variant="primary-sm" as={Link} to="/downloads">
             Download
           </Button>
         </div>
@@ -164,24 +178,22 @@ export default function Navbar({
         >
           {/* Main Links */}
           <div className="flex flex-col gap-2">
-            {NAV_LINKS.map(({ label, href }) => {
-              const isActive = activePage === label;
-              return (
-                <a
-                  key={label}
-                  href={href}
-                  onClick={() => setMobileOpen(false)}
-                  className={[
-                    'font-ui font-medium text-sm px-3 transition-colors',
-                    isActive
-                      ? ' text-accent'
-                      : 'text-neutral-1 hover:text-accent',
-                  ].join(' ')}
-                >
-                  {label}
-                </a>
-              );
-            })}
+            {NAV_LINKS.map(({ label, to }) => (
+              <NavLink
+                key={label}
+                to={to}
+                end={to === '/'}
+                onClick={() => setMobileOpen(false)}
+                className={({ isActive }) => [
+                  'font-ui font-medium text-sm px-3 transition-colors',
+                  isActive
+                    ? ' text-accent'
+                    : 'text-neutral-1 hover:text-accent',
+                ].join(' ')}
+              >
+                {label}
+              </NavLink>
+            ))}
 
             {/* Mobile Pages Accordion */}
             <div className="flex flex-col">
@@ -213,29 +225,15 @@ export default function Navbar({
 
               {mobilePagesOpen && (
                 <div className="pl-4 pr-2 py-2 flex flex-col gap-1.5 ml-3 mt-4 animate-[fadeSlideDown_0.15s_ease-out]">
-                  {[
-                    'Home',
-                    'About Us',
-                    'Features',
-                    'Blog',
-                    'Downloads',
-                    'Support',
-                    'Pricing',
-                    'Privacy Policy',
-                    'Terms & Condition',
-                    'Changelog',
-                    'License',
-                    'Styleguide',
-                    '404 Eorror',
-                  ].map((page) => (
-                    <a
-                      key={page}
-                      href={`#${page.toLowerCase().replace(/\s+/g, '-')}`}
+                  {MOBILE_PAGES.map((page) => (
+                    <Link
+                      key={page.to}
+                      to={page.to}
                       onClick={() => setMobileOpen(false)}
                       className="font-heading text-sm text-body hover:text-accent py-1 px-2 rounded-lg transition-colors"
                     >
-                      {page}
-                    </a>
+                      {page.label}
+                    </Link>
                   ))}
                 </div>
               )}
@@ -249,8 +247,8 @@ export default function Navbar({
           <div className="w-full">
             <Button
               variant="primary-sm"
-              as="a"
-              href="#download"
+              as={Link}
+              to="/downloads"
               onClick={() => setMobileOpen(false)}
               className="w-full text-center justify-center py-3"
             >
@@ -262,4 +260,3 @@ export default function Navbar({
     </header>
   );
 }
-
