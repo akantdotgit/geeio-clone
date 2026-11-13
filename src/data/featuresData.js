@@ -72,5 +72,3 @@ export const EXTENDED_FEATURES = [
     icon: 'chat',
   },
 ];
-
-export default CORE_CAPABILITIES;

@@ -1,3 +1,6 @@
+import heroPhoneMockupImg from '../assets/images/6a64f206429bff76b574a103_phone-1-p-800.webp';
+import plant1Img from '../assets/images/6a64f2068a837f18d051e77e_plant-1.webp';
+
 /**
  * src/data/heroTicker.js
  * Hero card ticker cards moving behind the center smartphone mockup
@@ -24,7 +27,7 @@ export const HERO_TICKER_CARDS = [
     title: 'AI analysis for plant care',
     description: 'Take photos, start diagnose diseases, & get plant care tips.',
     image: {
-      src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAa-Dryxl4aJV76eiq2uDts_7td60XuOVBcc01yv56y459y2eewAtj1pHQ9hI3OZzTHVkVbnM3VpRayiHlgqt5p0XYIDV7qN--hkLsuHlN5v5U7rNHTML2dlJmf4fj1jESrwZwmPGoFXsAVXbQo8btCuGFVzQ-mgE4g9-n50poYF5zVu6LmHUUAONng_pwQp2ca5h61fdgrNioHbQaAT5QZfiSk7Vy7CXDX_21atiQUo3iVGKwW-CIsw8mcoKGbnC9D2ns',
+      src: plant1Img,
       alt: 'AI analysis',
       fit: 'contain',
     },
@@ -80,7 +83,7 @@ export const HERO_TICKER_CARDS = [
  * Center smartphone mockup displayed directly above the ticker track
  */
 export const HERO_PHONE_MOCKUP = {
-  src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBvR_h7aNa8aTUfM2CxgqNvSIeadsG4IsG4YkLSvGitxBNjvZB0NmIyDh2aDgHBgUKferh-EVmxcB08BnV_6SOTtsZyuMpiHIF56aPuqJKN1TISh_B_mROr6wbEwcEXHV1F3RGbFvMLkSPYBPSm7SW3qWEsmL4KOdC0OLllW1zDAhkEsD5ckThOnr5jc1cGSCBZdK00Jws6X0IizTy3KUiggRSc7-NG3nRGWs3tb7T3uZrnPdtvv1FOa6avH3WqAg7KR0',
+  src: heroPhoneMockupImg,
   alt: 'Geeio App Interface',
 };
 

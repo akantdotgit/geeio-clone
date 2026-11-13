@@ -10,36 +10,35 @@ export const FOOTER_SECTIONS = [
     id: 'product',
     title: 'Product',
     links: [
-      { label: 'Features', href: '#features' },
-      { label: 'Pricing', href: '#pricing' },
-      { label: 'Support', href: '#support' },
+      { label: 'Features', to: '/features' },
+      { label: 'Pricing', to: '/pricing' },
+      { label: 'Support', to: '/contact' },
     ],
   },
   {
     id: 'services',
     title: 'Our services',
     links: [
-      { label: 'About', href: '#about' },
-      { label: 'Contact', href: '#contact' },
-      { label: 'Terms', href: '#terms' },
+      { label: 'About', to: '/about' },
+      { label: 'Contact', to: '/contact' },
+      { label: 'Terms', to: '/terms' },
     ],
   },
   {
     id: 'resources',
     title: 'Resources',
     links: [
-      { label: 'Plant Care Guide', href: '#guide' },
-      { label: 'Blog', href: '#blog' },
-      { label: 'License', href: '#license' },
+      { label: 'Plant Care Guide', to: '/blog' },
+      { label: 'Blog', to: '/blog' },
+      { label: 'License', to: '/license' },
     ],
   },
 ];
 
 export const BOTTOM_LINKS = [
-  { label: 'Privacy policy', href: '#privacy' },
-  { label: 'Terms of service', href: '#terms' },
+  { label: 'Privacy policy', to: '/privacy' },
+  { label: 'Terms of service', to: '/terms' },
 ];
 
 export const FOOTER_COPYRIGHT =
   '©Geeio - 2026, Designed By Templateflow Powered By Webflow';
-
