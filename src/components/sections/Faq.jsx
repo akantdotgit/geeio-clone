@@ -86,11 +86,11 @@ export default function Faq({
   };
 
   return (
-    <section className={`bg-surface rounded-xl sm:rounded-[20px] py-14 px-5 sm:py-20 sm:px-7.5 lg:py-35 w-full ${className}`.trim()}>
+    <section className={`bg-surface py-15 px-5 md:py-20 md:px-7.5 lg:py-35 mx-3 rounded-t-xl md:rounded-t-2xl lg:rounded-t-[20px] ${className}`.trim()}>
       {/* The div just next to the section element tag */}
       <div
         ref={containerRef}
-        className="flex flex-col lg:flex-row gap-12 justify-between items-start max-w-[1100px] mx-auto w-full"
+        className="flex flex-col lg:flex-row gap-12 justify-between items-start w-full max-w-[1200px] mx-auto"
       >
         {/* Heading wrapper div — Fade reveal */}
         <div

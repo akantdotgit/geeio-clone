@@ -6,14 +6,10 @@ import { HERO_TICKER_CARDS, HERO_PHONE_MOCKUP } from '../../data/heroTicker';
  * HeroCardTicker — Hero Card Ticker Behind Center Smartphone Mockup
  *
  * Implements:
- * - Smooth scroll-triggered fade reveal animation matching FAQ:
- *     Moving ticker track and smartphone mockup fade in & gently float
- *     into position together in perfect synchronization.
+ * - Smooth scroll-triggered fade reveal animation
  * - Moving ticker track with continuous infinite loop behind phone mockup
- * - High-resolution centered smartphone app preview
+ * - Centered high-resolution smartphone app preview layered directly over moving cards
  * - Data-driven with default fallback to HERO_TICKER_CARDS and HERO_PHONE_MOCKUP
- *
- * Source: export/home.html
  *
  * @param {Object} props
  * @param {Array} [props.cards] - Array of cards for the ticker track
@@ -34,7 +30,6 @@ export default function HeroCardTicker({
   );
   const containerRef = useRef(null);
 
-  // Trigger smooth fade reveal when scrolled into view (matching FAQ animation)
   useEffect(() => {
     if (typeof IntersectionObserver === 'undefined') {
       return;
@@ -66,27 +61,21 @@ export default function HeroCardTicker({
   return (
     <div
       ref={containerRef}
-      className={`bg-surface-alt rounded-b-[20px] relative w-full overflow-hidden pt-4 flex items-center justify-center min-h-[460px] sm:min-h-[520px] md:min-h-[580px] ${className}`.trim()}
+      className={`relative w-full overflow-hidden flex items-center justify-center ${className}`.trim()}
     >
-      {/* Moving Ticker Track (behind phone) — Smooth fade reveal */}
+      {/* Moving Ticker Track (behind phone) */}
       <MovingTickerTrack
         cards={cards}
         repeat={repeat}
-        className={`transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-        }`}
+        className={`transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
       />
 
-      {/* Smartphone Mockup in Foreground — Synchronized fade reveal */}
+      {/* Smartphone Mockup in Foreground */}
       <div
-        className={`relative z-20 pointer-events-none w-[260px] sm:w-[320px] md:w-[360px] shrink-0 top-5 transition-all duration-700 delay-200 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-        } ${mockupClassName}`.trim()}
+        className={`relative z-20 pointer-events-none w-full max-w-[240px] md:max-w-[360px] mx-auto shrink-0 top-4.5 md:top-4.75 transition-all duration-700 delay-200 ease-[cubic-bezier(0.16,1,0.3,1)] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          } ${mockupClassName}`.trim()}
       >
-        <div
-          className="absolute -z-10"
-          aria-hidden="true"
-        />
         <img
           alt={mockup.alt || 'Geeio App Interface'}
           className="w-full h-auto pointer-events-auto"

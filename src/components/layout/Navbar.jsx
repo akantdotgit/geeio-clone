@@ -96,7 +96,7 @@ export default function Navbar({
             <img
               src={logoSvg}
               alt="Geeio Logo"
-              className="h-5.25 sm:h-5 w-auto object-fill"
+              className="h-full w-auto object-fill"
             />
           </Link>
         </div>

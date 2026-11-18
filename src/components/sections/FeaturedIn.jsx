@@ -30,7 +30,7 @@ export default function FeaturedIn({
 
   return (
     <section
-      className={`py-8 sm:py-12 flex flex-col items-center overflow-hidden w-full ${className}`.trim()}
+      className={`py-18 px-5 pb-15 md:px-7.5 md:pb-20 lg:pb-35 flex flex-col items-center overflow-hidden w-full ${className}`.trim()}
     >
       <p className="text-[15px] sm:text-lg text-primary tracking-normal font-ui mb-6 sm:mb-8 text-center font-medium">
         {title}
