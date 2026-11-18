@@ -1,27 +1,31 @@
-import { Link } from 'react-router-dom';
 import { Navbar, Footer } from '../components/layout';
-import { Button } from '../components/ui';
+import { ContactSection, CtaBanner } from '../components/sections';
 
+/**
+ * Contact — Geeio Contact & Support Page
+ *
+ * Implements:
+ *   - Geeio Navbar with active state on Contact
+ *   - Contact hero section with botanical accent, negative-tracked heading, and data-driven methods list
+ *   - Flat, borderless, and shadowless contact form container with reusable Input and Button primitives
+ *   - Dark CTA banner matching the Geeio brand design
+ *   - Comprehensive Geeio footer
+ */
 export default function Contact() {
   return (
-    <div className="min-h-screen bg-canvas font-heading flex flex-col justify-between">
+    <div className="min-h-screen bg-canvas font-heading flex flex-col justify-between selection:bg-accent-1 selection:text-accent overflow-x-hidden">
+      {/* Navigation Header */}
       <Navbar activePage="Contact" />
-      <main className="flex-1 flex flex-col items-center justify-center px-4 py-20 text-center">
-        <div className="max-w-xl mx-auto bg-surface rounded-3xl p-10 sm:p-14 border border-neutral-2/40">
-          <span className="font-ui text-xs font-semibold text-accent uppercase tracking-widest mb-3 block">
-            Geeio
-          </span>
-          <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl font-medium tracking-[-1.5px] text-primary mb-4">
-            Contact
-          </h1>
-          <p className="font-heading text-body text-base sm:text-lg mb-8 leading-relaxed">
-            Coming soon. Reach out to our team for questions, partnerships, or plant care assistance.
-          </p>
-          <Button as={Link} to="/" variant="primary">
-            Back to Home
-          </Button>
-        </div>
+
+      {/* Main Content Area */}
+      <main className="flex-grow flex items-center justify-center px-4 sm:px-6 md:px-8 lg:px-12 py-10 sm:py-14 md:py-20">
+        <ContactSection />
       </main>
+
+      {/* Dark CTA Banner */}
+      <CtaBanner />
+
+      {/* Site Footer */}
       <Footer />
     </div>
   );
