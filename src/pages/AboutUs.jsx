@@ -1,27 +1,50 @@
-import { Link } from 'react-router-dom';
 import { Navbar, Footer } from '../components/layout';
-import { Button } from '../components/ui';
+import {
+  AboutHero,
+  AboutMission,
+  AboutPillars,
+  Team,
+  CtaBanner,
+} from '../components/sections';
 
+/**
+ * AboutUs — Full Geeio About Us Page
+ *
+ * Implements:
+ * - Geeio Navbar with activePage="About Us"
+ * - Section 1: Hero & Video Collaboration Banner ("Our Story")
+ * - Section 2: Mission narrative, dual editorial images & quantitative metrics bento
+ * - Section 3: Core AI plant care pillars with botanical SVG icons
+ * - Section 4: Leadership & Team infinite marquee ticker
+ * - Dark CTA banner ("Start taking care of your plant")
+ * - Site Footer with QR download directory
+ * - Strictly borderless and shadowless with depth via color blocking per AGENTS.md
+ */
 export default function AboutUs() {
   return (
-    <div className="min-h-screen bg-canvas font-heading flex flex-col justify-between">
+    <div className="min-h-screen bg-canvas font-heading selection:bg-accent-1 selection:text-accent flex flex-col justify-between overflow-x-hidden">
+      {/* Navigation Header */}
       <Navbar activePage="About Us" />
-      <main className="flex-1 flex flex-col items-center justify-center px-4 py-20 text-center">
-        <div className="max-w-xl mx-auto bg-surface rounded-3xl p-10 sm:p-14 border border-neutral-2/40">
-          <span className="font-ui text-xs font-semibold text-accent uppercase tracking-widest mb-3 block">
-            Geeio
-          </span>
-          <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl font-medium tracking-[-1.5px] text-primary mb-4">
-            About Us
-          </h1>
-          <p className="font-heading text-body text-base sm:text-lg mb-8 leading-relaxed">
-            Coming soon. Learn about our mission to bring intelligent plant care into every home.
-          </p>
-          <Button as={Link} to="/" variant="primary">
-            Back to Home
-          </Button>
-        </div>
+
+      {/* Main Content Area */}
+      <main className="w-full flex-grow flex flex-col items-center">
+        {/* Section 1: Hero & Video Banner */}
+        <AboutHero />
+
+        {/* Section 2: Mission & Metrics */}
+        <AboutMission />
+
+        {/* Section 3: Core AI Plant Care Pillars */}
+        <AboutPillars />
+
+        {/* Section 4: Leadership & Team Ticker */}
+        <Team />
       </main>
+
+      {/* Dark CTA Banner */}
+      <CtaBanner />
+
+      {/* Site Footer */}
       <Footer />
     </div>
   );
