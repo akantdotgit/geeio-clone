@@ -1,27 +1,52 @@
-import { Link } from 'react-router-dom';
 import { Navbar, Footer } from '../components/layout';
-import { Button } from '../components/ui';
+import {
+  FeaturesHero,
+  FeaturesThrive,
+  FeaturesHappier,
+  Faq,
+  CtaBanner,
+} from '../components/sections';
 
+/**
+ * Features — Geeio Features Page
+ *
+ * Implements:
+ *   - Geeio Navbar with active state on Features
+ *   - Features Hero with mobile app showcase & flat floating plant diagnosis card
+ *   - "Everything your plants need to thrive" section with growth chart & care reminders
+ *   - "A happier plant life, all in one place" grid with AI diagnosis capabilities & dark highlight card
+ *   - FAQ Accordion section identical to the Home page
+ *   - Geeio dark CTA banner
+ *   - Geeio Footer
+ */
 export default function Features() {
   return (
-    <div className="min-h-screen bg-canvas font-heading flex flex-col justify-between">
-      <Navbar activePage="Features" />
-      <main className="flex-1 flex flex-col items-center justify-center px-4 py-20 text-center">
-        <div className="max-w-xl mx-auto bg-surface rounded-3xl p-10 sm:p-14 border border-neutral-2/40">
-          <span className="font-ui text-xs font-semibold text-accent uppercase tracking-widest mb-3 block">
-            Geeio
-          </span>
-          <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl font-medium tracking-[-1.5px] text-primary mb-4">
-            Features
-          </h1>
-          <p className="font-heading text-body text-base sm:text-lg mb-8 leading-relaxed">
-            Coming soon. We are cultivating smart diagnostic features to help your garden thrive.
-          </p>
-          <Button as={Link} to="/" variant="primary">
-            Back to Home
-          </Button>
-        </div>
+    <div className="min-h-screen bg-canvas font-heading selection:bg-accent-1 selection:text-accent overflow-x-hidden">
+      {/* ── Hero Container with Soft Sage Botanical Gradient ─────────── */}
+      <div className="bg-linear-to-b from-[#f2f6ed] to-surface-alt mt-3 mx-3 rounded-xl md:rounded-2xl lg:rounded-[20px] overflow-hidden">
+        {/* Navigation Header */}
+        <Navbar activePage="Features" />
+
+        {/* Features Hero Section */}
+        <FeaturesHero />
+      </div>
+
+      {/* ── Main Content Container ───────────────────────────────────── */}
+      <main className="w-full items-center mx-auto bg-white overflow-x-hidden">
+        {/* Plant Thrive Section */}
+        <FeaturesThrive />
+
+        {/* Happier Plant Life Features */}
+        <FeaturesHappier />
+
+        {/* FAQ Section — Identical to Home page */}
+        <Faq />
       </main>
+
+      {/* ── Dark CTA Banner ──────────────────────────────────────────── */}
+      <CtaBanner />
+
+      {/* ── Site Footer ──────────────────────────────────────────────── */}
       <Footer />
     </div>
   );
