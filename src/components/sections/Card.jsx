@@ -8,7 +8,7 @@ import { Button } from '../ui';
  * 2. `cta` (e.g. AI analysis or Diagnose plant with action button)
  * 3. `reminders` (e.g. Plant care reminders with schedule tags)
  *
- * Preserves Tailwind classes and exact design specs from export/home.html.
+ * Preserves Tailwind classes and exact design specs from AGENTS.md.
  *
  * @param {Object} props
  * @param {Object} [props.card] - Complete card data object (from HERO_TICKER_CARDS)
@@ -45,7 +45,9 @@ export default function Card({
     reminders,
   };
 
-  const cardType = cardData.type || (cardData.reminders ? 'reminders' : cardData.cta ? 'cta' : 'badges');
+  const cardType =
+    cardData.type ||
+    (cardData.reminders ? 'reminders' : cardData.cta ? 'cta' : 'badges');
   const cardTitle = cardData.title;
   const cardDesc = cardData.description;
 
@@ -53,7 +55,8 @@ export default function Card({
   const imageObj = typeof cardData.image === 'object' ? cardData.image : null;
   const imgSrc = typeof cardData.image === 'string' ? cardData.image : imageObj?.src;
   const imgAlt = imageObj?.alt || cardTitle || 'Plant image';
-  const imgFit = imageObj?.fit || (cardType === 'reminders' ? 'cover' : 'contain');
+  const imgFit =
+    imageObj?.fit || (cardType === 'reminders' ? 'cover' : 'contain');
   const customContainerClass = imageObj?.containerClassName || '';
 
   return (
@@ -62,8 +65,8 @@ export default function Card({
       {...props}
     >
       {/* Card Image */}
-      {imgSrc && (
-        imgFit === 'cover' ? (
+      {imgSrc &&
+        (imgFit === 'cover' ? (
           <div
             className={`w-[80px] sm:w-[100px] h-[90px] sm:h-[110px] rounded-2xl overflow-hidden shrink-0 bg-surface-container ${customContainerClass}`.trim()}
           >
@@ -83,8 +86,7 @@ export default function Card({
               loading="lazy"
             />
           </div>
-        )
-      )}
+        ))}
 
       {/* Card Body */}
       <div className="flex-1 min-w-0">
@@ -133,30 +135,34 @@ export default function Card({
         )}
 
         {/* 3. Reminders Variant: Plant schedule indicators */}
-        {cardType === 'reminders' && cardData.reminders && cardData.reminders.length > 0 && (
-          <div className="space-y-1.5">
-            {cardData.reminders.map((reminder) => (
-              <div
-                key={reminder.id || reminder.title}
-                className="flex items-center gap-2 p-1.5 rounded-lg bg-accent-1/70 text-[10px] sm:text-[11px]"
-              >
-                <div className="w-5 h-5 rounded-md bg-accent-1 flex items-center justify-center text-primary shrink-0">
-                  <span className="material-symbols-outlined text-[12px] sm:text-[13px]">
-                    {reminder.icon}
-                  </span>
+        {cardType === 'reminders' &&
+          cardData.reminders &&
+          cardData.reminders.length > 0 && (
+            <div className="space-y-1.5">
+              {cardData.reminders.map((reminder) => (
+                <div
+                  key={reminder.id || reminder.title}
+                  className="flex items-center gap-2 p-1.5 rounded-lg bg-accent-1/70 text-[10px] sm:text-[11px]"
+                >
+                  <div className="w-5 h-5 rounded-md bg-accent-1 flex items-center justify-center text-primary shrink-0">
+                    <span className="material-symbols-outlined text-[12px] sm:text-[13px]">
+                      {reminder.icon || 'water_drop'}
+                    </span>
+                  </div>
+                  <div className="min-w-0 leading-tight">
+                    <p className="font-bold text-on-surface text-[10px] sm:text-[11px] leading-none">
+                      {reminder.title}
+                    </p>
+                    {reminder.schedule && (
+                      <p className="text-[8px] sm:text-[9px] text-on-surface-variant mt-0.5 leading-none">
+                        {reminder.schedule}
+                      </p>
+                    )}
+                  </div>
                 </div>
-                <div className="min-w-0 leading-tight">
-                  <p className="font-bold text-primary text-[10px] sm:text-[11px] leading-none">
-                    {reminder.title}
-                  </p>
-                  <p className="text-[8px] sm:text-[9px] text-body mt-0.5 leading-none">
-                    {reminder.schedule}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
+              ))}
+            </div>
+          )}
 
         {children}
       </div>

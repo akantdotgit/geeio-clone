@@ -37,8 +37,8 @@ const VARIANTS = {
   /** 1. Primary dark pill */
   primary: [
     'bg-primary text-canvas',
-    'font-heading text-base font-bold leading-tight',
-    'px-7 py-4 rounded-full',
+    'font-heading text-[15px] md:text-base font-bold leading-tight',
+    'px-6 py-3.75 md:py-4.25 rounded-full',
     'hover:bg-neutral-1 active:scale-[0.98]',
   ].join(' '),
 
@@ -46,7 +46,7 @@ const VARIANTS = {
   outline: [
     'bg-transparent border border-primary text-primary',
     'font-heading text-base font-bold leading-tight',
-    'px-7 py-4 rounded-full',
+    'px-7 py-3.5 md:py-4 rounded-full',
     'hover:bg-primary hover:text-canvas hover:border-primary active:scale-[0.98]',
   ].join(' '),
 
@@ -61,8 +61,8 @@ const VARIANTS = {
   /** 4. White pill on dark surface (Footer CTA) */
   white: [
     'bg-canvas text-primary',
-    'font-heading text-base font-bold leading-tight',
-    'px-6 py-4 rounded-full',
+    'font-heading text-[15px] md:text-base font-bold leading-tight',
+    'px-6 py-3.5 md:py-4.5 rounded-full',
     'hover:bg-surface active:scale-[0.98]',
   ].join(' '),
 
